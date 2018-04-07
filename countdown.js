@@ -1,14 +1,13 @@
 
 //not sure if (eventDate) is correct below
-function getTimeRemaining (eventDate)  {
+function getTimeRemaining (endtime)  {
 
 	//var event = document.getElementById('event');
-	var eventDate = document.getElementById('eventDate');
+	
 	//var eventHour = document.getElementById('eventHour');
 	//var eventMinute = document.getElementById('eventMinute'); 
 	//var eventSeconds = document.getElementById('eventSeconds');
 	//var eventAmPm = document.getElementById('eventAmPm');
-
 
 	var remainingTime = Date.parse(endtime) - Date.parse(new Date());
 	var seconds = Math.floor( (remainingTime/1000) % 60);
@@ -27,8 +26,8 @@ function getTimeRemaining (eventDate)  {
 
 function startTimer (id, endtime) {
 	var clock = document.getElementById(id);
-	var timeInterval = setInterval(function() {
-		var remainingTime = getTimeRemaining(endtime);
+	function updateClock(){
+	var remainingTime = getTimeRemaining(endtime);
 		clock.innerHTML =  'days: ' + remainingTime.days + '<br>' +
 						   'hours: ' + remainingTime.hours + "<br>" +
 						   'minutes: ' + remainingTime.minutes + '<br>' +
@@ -37,8 +36,13 @@ function startTimer (id, endtime) {
 		if(remainingTime.total <=0) {
 			clearInterval(timeInterval);
 		}
-	},1000);
-}
+	}
+
+	updateClock(); // run function once at first without delay
+	var timeInterval = setInterval(updateClock, 1000);
+
+var eventDate = document.getElementById('eventDate');
+
 
 
 //get event time and set default time if only date
