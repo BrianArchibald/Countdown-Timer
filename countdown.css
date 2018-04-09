@@ -1,3 +1,9 @@
 body {
-	background-color: grey;
+	text-align: center;
+}
+#timer {
+	color: #1c2442;
+	font-size: 40px;
+	font-weight: bold;
+	padding-top: 1.5em;
 }
