@@ -3,25 +3,31 @@
 <head>
 	<title>Countdown Timer</title>
 	<link rel="stylesheet" type="text/css" href="countdown.css">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 </head>
 <body>
-	<div id="eventAndSumbit">
-			<div class="eventAndDate">
-				<div>
-					<h1>What's the event?</h1>
-					<input type="text" id="event" name="event">
-				</div>
-				<div>
-					<h1>When does it begin?</h2>
-					<input type="text" id="eventDate" name="eventDate" placeholder="4/3/2019">
-				</div>
+	<div class="eventAndStart">
+		<div class="eventAndDate">
+			<div>
+				<h1>What's the event?</h1>
+				<input type="text" id="event" name="event">
 			</div>
-			</br>
-		<div class="submit">
-				<input type="button" value="Submit" onclick="startTimer();hide();"/>
+			<div>
+				<h1>When does it begin?</h2>
+				<input type="text" id="eventDate" name="eventDate" placeholder="4/3/2019">
+			</div>
 		</div>
-		</br>
 	</div>
+		</br>
+
+	<div class="submit">
+			<input type="button" value="Submit" onclick="startTimer()"/>
+	</div>
+		</br>
+
+	<div id="eventOutput"></div>
+	<div id="timer"></div>
+
 	<script src="countdown.js"></script>
 </body>
 </html>
