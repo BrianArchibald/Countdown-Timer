@@ -1,3 +1,9 @@
+function hide() {
+
+   	document.getElementById("eventAndSubmit").style.display = "none";
+ 
+};
+
 function startTimer(){
     var dateEntered = document.getElementById("eventDate").value;
     var event = document.getElementById("event").value;
@@ -30,3 +36,4 @@ function startTimer(){
         }
     }, 1000);
 }
+
